@@ -1,1 +1,1 @@
-# easypop_revised
+# easypop-revised
