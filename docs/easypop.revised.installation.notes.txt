@@ -1,0 +1,17 @@
+
+A. General Notes:
+
+   1. Installation is simply a matter of copying the executable file (named for your platform) into any folder in which you have sufficient permissions to run it.  If you add its full name and path to your PATH environmental variable, you can call it from any directory to which you want to write results files.  More simply, you can copy the executable to a folder to which you can both execute it and and write result files (example, most folders inside your home directory).  To run it you'll need to open a terminal (in Windows, a command prompt or powershell).  
+
+   2. You can get a quick sense of running the program just by typing the name of the executable (apple and linux users, if you're running it from your current folder, precede the name with a dot and forward slash, ./) and follow the executable name with the single keyword, "prompt"   The program will prompt you through the simulation parameterization (press Ctl+c to abort).  See the UserGuide pdf of the original, and the easypop.revised.usage.txt for more details.
+
+
+B. On the Apple Intel and M1 executables.
+
+   1. If you want to use it on a Mac with the newer M1 or M2 (the silicon version of the executable was compiled on an M1 Mac), you may want to try both the silicon and the intel version.  Although the Apple silicon version runs fine on my M1 Mac, I heard from a Mac M1 user that the silicon version gave a security warning, but the Intel version worked fine.  If you're not sure whether your Mac uses a silicon M chip, click the Apple menu icon, then  "About This Mac"  If you're Mac uses an M1 or M2 (Apple silicon) processor, you'll see the M1 or M2 noted just below the Mac name ( see https://support.apple.com/en-us/HT211814 ). 
+
+   2. After downloading the executable, you may need to add exectuable attribute to the file.  Open a terminal, use "cd" to go to the folder that contains the executable and add executable privileges with the command,
+
+		chmod +x <name of executable>
+
+   3.  When you try to execute the command, you also may encounter a message that the file cannot be executed for security reasons.  On my Mac I clicked cancel on the denial message, then went to the apple menu icon, then clicked on System Settings, then,  Privacy and Security.  Scrolling down to Security, there was a warning message about the EASYPOP executable, and a button labeled "Allow Anyway".  I clicked on the button, was prompted to enter my password.  A second try at executing, I saw another warning message, but with an option to run it by clicking "open"  I was then able to execute the program, and it ran subsequently without warning messages.

@@ -1,0 +1,68 @@
+﻿The Revised EASYPOP Usage
+
+
+i. Running the program
+   -------------------
+
+This revised version of EASYPOP is updated to compile for the latest OS platforms, and to run on the terminal without needing desktop GUI resources.  If you have an R installation and install our easypopr package (https://github.com/popgengui/easypopr), you can ignore this section and see section ii for details on editing configuration files.  
+
+For those who want to run this version of EASYPOP outside of R, Windows users should run it from the command prompt or the powershell, and Mac and Linux users from the terminal.  In any case, this version also adds the ability for you to have your parameter values saved to a file, and run from a file (details below).  There are 3 ways to run it.  At the terminal it runs with one of:
+
+	1. EASYPOP.revised prompt
+	2. EASYPOP.revised prompt myfile 
+	3. EASYPOP.revised read myfile
+
+For "EASYPOP.revised" substitute the full name of the EASYPOP executable.  For "myfile" substitute any file name you prefer.  
+
+In case (1) above, the "prompt" keyword tells EASYPOP to prompt you for parameter values, then run a simulation accordingly.  
+In case (2) above, the "prompt" keyword, followed by a file name, tells EASYPOP to behave as in (1), but also write your parameter values to the file named by the 2nd argument.  
+
+In case (3) above, the "read" keyword, followed by a file name, tells EASYPOP to skip prompts and read in parameters from the file given as the 2nd argument, then run a simulation accordingly.  Note that when the first argument is the "read" keyword, the second argument is required and is taken as the name of an existing file.
+
+The program's ability to write prompted parameter values to a file, and to read in parameter values from the file, is meant to help you rerun the program after altering a few parameter values, without having to step through all the prompts.  The approach the design encourages is to make an initial run using the prompt, then open the configuration file, change parameter values, and rerun the simulation.  
+
+ii The Configuration File
+    ----------------------
+The configuration file lines consist of name:<tab>value pairs.  These pairs are always written (and should remain after any editing) as one line, no matter the length of the name and/or value.  Parameters values appear in a configuration file in 3 different formats:
+
+	1. single value
+	2. array
+	3. array of duples
+
+1.  Single values are most common parameter types.  These are a few examples from a larger file:
+
+	ploidy: 2
+  	two_sexes:      y
+	number_of_generations:  200
+	name_of_file:   ep.1.
+
+Important: In most cases you should change the name_of_file value (giving the base name of results files) when you revise, save, and ask EASYPOP to read and run your file. In the above case, for example, you might change ep.1. to ep.2.  Otherwise, if EASYPOP reads in the file, but then finds simulation output files with the same base name, it will stop without running the simulation. Also, when you alter a value, make sure you retain the colon and the <tab> that follow the parameter name, which help the program parse the line. 
+
+
+2. Array values are comma-separated integers or floating point values, written when your prompted responses required you to enter values on a per-population, or per locus basis.  You can change individual array values, while retaining the separating commas.  For example, for a simulation with 6 populations of varying size, the configuration file might show:
+
+	per_population_individual_counts:       10,12,14,16,18,20
+	
+	Note that adding or deleting values in the array (rather than just changing the existing values) may require resetting others for consistency.  For example in the above, if you change the number of comma-delimited values, you would then have also to alter the prior prompted value to match the total number of comma separated values in the array:
+
+	number_populations:     6
+
+
+3. An array of duples is likely to be the least common parameter type you'll see in your configuration files, written only when, at the prompt, you have selected to assign mutation models on a per-locus basis, and have selected a mixed model for at least one locus.  It is an array of pairs of values. The two terms of each pair are separated by a comma. The pairs are separated by a semicolon. The first term in each duple gives a locus number (integer), the second a proportion of mutation events (floating point number).  For example, in a parameterization in which you ask for 15 loci:
+	
+	number_of_loci: 15
+
+but with mutation schemes that vary per locus, so that you've responded "n" (no) as to whether all loci have the same mutation scheme:
+
+	all_loci_same_mutation_scheme:  n
+
+and, responding to prompts you select only loci 3, 6, 9, 12, and 15 to have a mixed mutation model that requires setting a proportion of Kam mutation events.  The "3" on the mutation model list then is shown in the array giving model numbers, in 3rd, 6th, 9th, etc, positions:
+
+    per_locus_mutation_model:       1,2,3,1,2,3,1,2,3,1,2,3,1,2,3
+
+so that locus 3 is to have a proportion of Kam events of 0.4, locus 6, a proportion of 0.3, etc.  Having entered the proportion values for each of these as prompted, after the simulation has finished, you find in your configuration file these settings recorded (on a single line) as:
+
+    locus_numbers_and_proportions_kam_mutation_events:      3,0.400000;6,0.300000;9,0.200000;12,0.100000;15,0.500000
+	
+As with the other types of parameter entry values, you can alter these, but should keep them formatted as comma-separated duples separated by semicolons.  Note, too, that when entering floating point values you can omit the trailing zeros seen above, which needs a formatting correction that is on our TODO list.
+
