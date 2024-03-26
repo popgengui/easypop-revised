@@ -1,9 +1,7 @@
-Revision to executables dated 08/2023, to those dated 01/2024:
-
+Revision to executables dated 01/2024:
 - When paramaterizing the migration scheme, heirarchical island, the writing of parameter, per_archipelago_number_of_populations to a configuration file was suppressed in the case in which the user responds  with "y" when setting the param, same_number_populations_each_archipelago.  In the case of uniform number of pops per archipelago, the configuraion file should not contain an array listing, as the program ignores this and simply divides the number of populations by the number of archipelagos.  Further, in the revised executable, the program does not look for such an array when if finds the "y" value for same_number_populations_each_archipelago.  In the older version, the program did (incorrectly) look for an array giving per_archipelago_number_of_populations when the same_number_populations_each_archipelago was set to "y"  Hence, the older executional will throw an error if a config file with the noted settings was created with the new version. Note that this issue does not arise when the heirarchical island model is chosen as a second migration scheme.
 
 
-Revision to executables dated 01/2024 to those dated 03/2024
-
+Revision to executables dated 03/2024
 - A new simulation output option provides a gen and dat file for each generation, rather than the default (former) behavior in which only one gen and dat file is produced, for the last generation.  This revision adds the new paramter to the configuration file.  Configuration files created with this new revision can be run using older executables, but the new option entry is ignored and only the last generation produces a gen and dat file.  
 
