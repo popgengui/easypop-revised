@@ -6,9 +6,9 @@ These executables have been revised and recompiled by T. Cosart for more current
 
 - the program can write a simulation configuration file. You can then run the simulation based on the configuration file, as an alternative to stepping through the prompt/response procedure.  For details, see the easypop.revised.usage.txt file in this repository's "doc" directory.
 
-- In executables compiled since 10/2024, the program allows you to specify whether it should produce \*.gen, \*.dat, or both (formerly the only option) of its genotype output files types.
+- In executables compiled since 10/2024, the program prompts you to specify whether it should produce \*.gen, \*.dat, or both (formerly the only option) of its genotype output files types.
 
-- In executables compiled since 03/2024, the program adds the option to produce genotype files for each generation, rather than the default behavior, which gives you genotype files only for the last generation.  A note of caution:  requesting per-generation genotype files can result in a very large amount of output, since the number of genotype output files will total the number of generations times the number of replicates, doubled if the program is producing both both genotype file types.
+- In executables compiled since 03/2024, the program prompts you with an option to produce genotype files for each generation, rather than the default behavior, which gives you genotype files only for the last generation.  A note of caution:  requesting per-generation genotype files can result in a very large amount of output, since the number of genotype output files will total the number of generations times the number of replicates, doubled if the program is producing both both genotype file types.
 
 In our repository layout, current executables are in platform specific subdirectories.  In the "docs" directory, you'll find the author's original user manual in pdf format, as well as documentation detailing the revised input methods and configuration file format.
 
