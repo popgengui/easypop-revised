@@ -20,7 +20,7 @@ These executables have been revised and recompiled by T. Cosart for more current
                 population number, number of loci, number of alleles, 
                 and number of digits coding the alleles.  
 
-              In the original format the header numbers represent:
+		- In the original format the header numbers represent:
                 generation number, number of loci, number of alleles, 
                 number of digits coding the alleles.         
 
