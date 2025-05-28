@@ -26,10 +26,11 @@ These executables have been revised and recompiled by T. Cosart for more current
 
 	 Note that no new options were added for dat file format, which is still only available in the original format.
 
- - Update on the 05/2025 executables:  the executables dated 20250517, posted yesterday (05/19) and replaced today (05/20), have a bug that causes incorrect handling of configuration files that used older genotype output schemes.  The current executables dated 20250520 should correctly handle config files created by older 3.0 versions.
+ - Update on the 05/2025 executables:  
+##Issues 
+- The executables dated 20250517, posted yesterday (05/19) and replaced today (05/20), have a bug that causes incorrect handling of configuration files that used older genotype output schemes.  The current executables dated 20250520 should correctly handle config files created by older 3.0 versions.
 
- - Update on all executables.  A bug was found that applies to all versions as of 05/28/2024.  Exact bug behaviour is not yet fully delineated, but review of the code suggests that users should not select the spatial migrationn model (type 6) as a second migration scheme.  For more details, please see the issues section of the easypop.revised github at https://github.com/popgengui/easypop-revised/issues
-
+- A bug was found that applies to all versions through 05/20/2024.  Exact bug behaviour is not yet fully delineated, but review of the code suggests that users should not select the spatial migrationn model (type 6) as a second migration scheme.  For more details, please see the issues section of the easypop.revised github at https://github.com/popgengui/easypop-revised/issues
 ## repository layout
 Current executables are in platform specific subdirectories under "executables".  In the "docs" directory, you'll find the author's original user manual in pdf format, as well as documentation detailing the revised input methods and configuration file format.  Older versions of this revised easypop are found in the "old.executable.versions" directory.
 
