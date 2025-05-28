@@ -21,7 +21,7 @@ These executables have been revised and recompiled by T. Cosart for more current
                 and number of digits coding the alleles.  
 
 		- In the original format the header numbers represent:
-                generation number, number of loci, number of alleles, 
+                number of populations, number of loci, number of alleles, 
                 number of digits coding the alleles.         
 
 	 Note that no new options were added for dat file format, which is still only available in the original format.
