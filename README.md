@@ -26,11 +26,12 @@ These executables have been revised and recompiled by T. Cosart for more current
 
 	 Note that no new options were added for dat file format, which is still only available in the original format.
 
- - Update on the 05/2025 executables:  
+ - Update on the 05/2025 executables: the executable added today 05/29/2025 (tagged 20250529), is revised to disallow using the spatial migration scheme as the second migration scheme (i.e. when the user opts to change the migration scheme).  This is added due the the issue noted below.
+	
 ## bugs and other issues 
-- The executables dated 20250517, posted yesterday (05/19) and replaced today (05/20), have a bug that causes incorrect handling of configuration files that used older genotype output schemes.  The current executables dated 20250520 should correctly handle config files created by older 3.0 versions.
+- The executables dated 20250517, posted yesterday (05/19) and replaced today (05/20), have a bug that causes incorrect handling of configuration files that used older genotype output schemes.  The current executables dated 20250520 or after should correctly handle config files created by older 3.0 versions.
 
-- A bug was found that applies to all versions through 05/20/2024.  Exact bug behaviour is not yet fully delineated, but review of the code suggests that users should not select the spatial migrationn model (type 6) as a second migration scheme.  For more details, please see the issues section of the easypop.revised github at https://github.com/popgengui/easypop-revised/issues
+
 ## repository layout
 Current executables are in platform specific subdirectories under "executables".  In the "docs" directory, you'll find the author's original user manual in pdf format, as well as documentation detailing the revised input methods and configuration file format.  Older versions of this revised easypop are found in the "old.executable.versions" directory.
 
