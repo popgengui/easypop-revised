@@ -1,3 +1,5 @@
+
+
 Revision to executables dated 01/2024:
 - When parametrizing the migration scheme, hierarchical island, the writing of parameter, per_archipelago_number_of_populations to a configuration file was suppressed in the case in which the user responds  with "y" when setting the param, same_number_populations_each_archipelago.  In the case of uniform number of pops per archipelago, the configuration file should not contain an array listing, as the program ignores this and simply divides the number of populations by the number of archipelagos.  Further, in the revised executable, the program does not look for such an array when if finds the "y" value for same_number_populations_each_archipelago.  In the older version, the program did (incorrectly) look for an array giving per_archipelago_number_of_populations when the same_number_populations_each_archipelago was set to "y"  Hence, the older executional will throw an error if a config file with the noted settings was created with the new version. Note that this issue does not arise when the hierarchical island model is chosen as a second migration scheme.
 
@@ -15,5 +17,5 @@ Revision to executables dated 05/2025, version incremented to v3.1
  - Update on the 05/2025 executables:  the executables dated 20250517, posted yesterday (05/19) and replaced today (05/20), have a bug that causes incorrect handling of configuration files that used older genotype output schemes.  The current executables dated 20250520 should correctly handle config files created by older 3.0 versions.
  - 05/29/2025.  The executable posted today disallows the use of the spatial migration model as the second migration scheme (when users opt to change the migration scheme during the simulation).  For details on the issues with this case, see https://github.com/popgengui/easypop-revised/issues
 
-
-
+Revisions dated 06/2025
+- This revsion v3.1.1, tagged 20250612 fixes the problems seen when selecting spatial migration as a second migration scheme.
