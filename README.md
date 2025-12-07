@@ -27,6 +27,7 @@ These executables have been revised and recompiled by T. Cosart for more current
 	 Note that no new options were added for dat file format, which is still only available in the original format.
 
  - Update on the 05/2025 executables: the executable added today 05/29/2025 (tagged 20250529), is revised to disallow using the spatial migration scheme as the second migration scheme (i.e. when the user opts to change the migration scheme).  This is added due the the issue noted below.
+ - Executable with tag 20250612 includes a fix for the spatial migration bug. 
 	
 ## bugs and other issues 
 - The executables dated 20250517, posted yesterday (05/19) and replaced today (05/20), have a bug that causes incorrect handling of configuration files that used older genotype output schemes.  The current executables dated 20250520 or after should correctly handle config files created by older 3.0 versions.
