@@ -1,6 +1,8 @@
 # easypop-revised
 
-This repository ( https://github.com/popgengui/easypop-revised ) provides updated executables for the simulation program, EASYPOP, authored by F. Balloux, (c.f. Balloux, Francois. "EASYPOP (version 1.7): a computer program for population genetics simulations." Journal of heredity 92.3 (2001): 301-302 ).
+This repository ( https://github.com/popgengui/easypop-revised ) provides updated executables for the simulation program, EASYPOP, authored by F. Balloux, (c.f. Balloux, Francois. "EASYPOP (version 1.7): a computer program for population genetics simulations." Journal of heredity 92.3 (2001): 301-302 ).  
+
+We thank Francois Balloux for sending us the source code, and allowing us to recompile it for more recent versions of operating systems, and to add some features.
 
 ## revisions
 These executables have been revised and recompiled by T. Cosart for more current Linux, Windows, and Apple Mac platforms.  It includes two for Mac platforms, one compiled on an Intel cpu, the other on the silicon, M1 cpu. The original's Windows GUI interface has been replaced by a terminal (console) interface that mimics the prompt/response format of the original, which was itself essentially a terminal inside an application window.  Further, it adds the following features:
