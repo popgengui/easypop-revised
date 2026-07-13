@@ -30,11 +30,30 @@ These executables have been revised and recompiled by T. Cosart for more current
 
  - Update on the 05/2025 executables: the executable added today 05/29/2025 (tagged 20250529), is revised to disallow using the spatial migration scheme as the second migration scheme (i.e. when the user opts to change the migration scheme).  This is added due the the issue noted below.
  - Executable with tag 20250612 includes a fix for the spatial migration bug. 
+
+## installation
+
+- General Installation:
+
+	- Installation is essentially a matter copying the executable file (named for your platform) into any folder in which you have sufficient permissions to run it.  If you add its full name and path to your PATH environmental variable, you can call it from any directory to which you want to write results files.  More simply, you can copy the executable to a folder to which you can both execute it and and write result files (example, most folders inside your home directory).  To run it you'll need to open a terminal (in Windows, a command prompt or powershell).  
+
+   	- You can get a quick sense of running the program just by typing the name of the executable (apple and linux users, if you're running it from your current folder, precede the name with a dot and forward slash, ./) and follow the executable name with the single keyword, "prompt"   The program will prompt you through the simulation parameterization (press Ctl+c to abort).  See the UserGuide pdf of the original, and the easypop.revised.usage.txt for more details.
+
+
+- Apple Intel and M1 executables.
+
+   	- If you want to use it on a Mac with the newer M1 or M2 (the silicon version of the executable was compiled on an M1 Mac), you may want to try both the silicon and the intel version.  Although the Apple silicon version runs fine on my M1 Mac, I heard from a Mac M1 user that the silicon version gave a security warning, but the Intel version worked fine.  If you're not sure whether your Mac uses a silicon M chip, click the Apple menu icon, then  "About This Mac"  If you're Mac uses an M1 or M2 (Apple silicon) processor, you'll see the M1 or M2 noted just below the Mac name ( see https://support.apple.com/en-us/HT211814 ). 
+
+   	- After downloading the executable, you may need to add exectuable attribute to the file.  Open a terminal, use "cd" to go to the folder that contains the executable and add executable privileges with the command,
+
+		chmod +x <name of executable>
+
+  	- Security issue: when you try to execute the command, you also may encounter a message that the file cannot be executed for security reasons.  On my Mac I clicked cancel on the denial message, then went to the apple menu icon, then clicked on System Settings, then,  Privacy and Security.  Scrolling down to Security, there was a warning message about the EASYPOP executable, and a button labeled "Allow Anyway".  I clicked on the button, was prompted to enter my password.  A second try at executing, I saw another warning message, but with an option to run it by clicking "open"  I was then able to execute the program, and it ran subsequently without warning messages.
 	
 ## bugs and other issues 
 - The executables dated 20250517, posted yesterday (05/19) and replaced today (05/20), have a bug that causes incorrect handling of configuration files that used older genotype output schemes.  The current executables dated 20250520 or after should correctly handle config files created by older 3.0 versions.
  - 05/29/2025.  For all versions of the  program, incorrect prgram behaviour is found to be likely when users select the spatial migration model as the second migration scheme.  The current exectuable, tagged 20250529, disallows this selection for a second migration scheme.  For details on the possible issues with this case, see https://github.com/popgengui/easypop-revised/issues
- - 06/13/2025.  The latest executable (version 3.1.1, date tag, 20250612) includes a fix for the problem noted above, when spatial migration is selected as the second migration scheme.
+ - 06/13/2025.  Executables dated on or after 06/12/2025 (version 3.1.1, earliest date tag, 20250612) include a fix for the problem noted above, when spatial migration is selected as the second migration scheme.
 
 ## repository layout
 Current executables are in platform specific subdirectories under "executables".  In the "docs" directory, you'll find the author's original user manual in pdf format, as well as documentation detailing the revised input methods and configuration file format.  Older versions of this revised easypop are found in the "old.executable.versions" directory.
